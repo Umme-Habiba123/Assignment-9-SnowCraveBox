@@ -1,9 +1,11 @@
 import React from 'react';
 
+import AboutMe from '../Components/AboutMe';
+
 const About = () => {
     return (
         <div>
-            <h1>This is ABout page</h1>
+           <AboutMe></AboutMe>
         </div>
     );
 };

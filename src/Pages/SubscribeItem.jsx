@@ -1,25 +1,61 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const SubscribeItem = ({item}) => {
-    const {thumbnail,name,description} = item
+const SubscribeItem = ({ item }) => {
+    const { thumbnail, name, description, price, frequency, rating, number_of_reviews,id } = item;
+
+    const handleCardClick = () => {
+        console.log('Card clicked');
+    };
+
     return (
-        <div className=''>
-            <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="flex justify-center mb-2 fontgloria-hallelujah-font">
+            <div
+                className="card w-80 bg-white shadow-xl rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100"
+                onClick={handleCardClick}
+            >
                 <figure>
                     <img
                         src={thumbnail}
-                        alt="" />
+                        alt={name}
+                        className="w-full h-48 object-cover"
+                    />
                 </figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                        {name}
-                        <div className="badge badge-secondary">NEW</div>
+                <div className="card-body p-3">
+                    <h2 className="card-title text-lg font-semibold text-gray-800 flex justify-between items-center">
+                        <span>{name}</span>
+                        <div className="badge badge-secondary text-sm">NEW</div>
                     </h2>
-                    <p>{description}</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Subscribe</div>
-                        <div className="badge badge-outline">Details</div>
+                    <p className="text-gray-600 text-sm">{description}</p>
+                    <div className='flex justify-between'>
+                        <div className=" text-gray-800">
+                            <span className="font-semibold text-lg">${price}</span>
+                            <span className="text-sm text-gray-500 ml-2">{frequency}</span>
+                        </div>
+
+                        <div className="mt-1 flex justify-between items-center text-sm">
+                            <div className="flex items-center text-yellow-500">
+                                <span className="mr-1">{rating}</span>
+                                <span className="text-gray-400">({number_of_reviews} reviews)</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <div className="mt-1 flex justify-between items-center">
+                        <div className="w-1/2 flex justify-between">
+                            <button className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black">
+                                Subscribe
+                            </button>
+                          <Link to={`/boxcarddetails/${id}`}>
+                          <button className="btn btn-secondary text-xs bg-gray-400 border-gray-400 ml-30 px-7  text-black hover:bg-white">
+                            View More
+                           </button>
+                          </Link>
+                          
+               
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

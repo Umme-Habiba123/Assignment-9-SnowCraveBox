@@ -2,6 +2,7 @@ import React from 'react';
 import navbarPhoto from '../assets/navbar-photo.png'
 import { Link, NavLink } from 'react-router';
 import profile from '../assets/user.png'
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
        <li className='text-cyan-500  hover:scale-105' ><NavLink to={'/about'}>ABOUT</NavLink></li> 
        <li className='text-cyan-500 hover:scale-105 '><NavLink to={'/contact'}>CONTACT</NavLink></li> 
        <li className='text-cyan-500  hover:scale-105'><NavLink to={'/shop'}>SHOP</NavLink></li> 
-       <li className='text-cyan-500  hover:scale-105'><NavLink to={'/cart'}>CART</NavLink></li> 
+       <li className='text-cyan-500  hover:scale-105'><NavLink to={'/cart'}>CART <FaShoppingCart /></NavLink></li> 
                        
     </>
     return (

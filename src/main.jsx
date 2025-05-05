@@ -20,6 +20,9 @@ import Slider from './Components/Slider.jsx';
 import HomeLayout from './Layouts.jsx/HomeLayout.jsx';
 
 import SubscribeItem from './Pages/SubscribeItem.jsx';
+import BoxCardDetails from './Pages/BoxCardDetails.jsx';
+import RatingReview from './Components/ReviewSection.jsx';
+import ReviewSection from './Components/ReviewSection.jsx';
 
 const router = createBrowserRouter([
   {
@@ -67,6 +70,15 @@ const router = createBrowserRouter([
       {
         path:'/subscribe/:id',
         Component:SubscribeItem
+      },
+      {
+        path:'/boxcarddetails/:id',
+        Component:BoxCardDetails,
+        loader:()=>fetch('/catDog.json')
+      },
+      {
+        path:'/reviewsection',
+        Component:ReviewSection
       }
     ]
     
