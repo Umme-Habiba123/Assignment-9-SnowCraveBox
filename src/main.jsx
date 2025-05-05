@@ -9,10 +9,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
-import About from './Pages/About.jsx';
+
 import Shop from './Pages/Shop.jsx';
 import Contact from './Pages/Contact.jsx';
-import Cart from './Pages/Cart.jsx';
+
 import HowItWorks from './Components/HowItWorks.jsx';
 import CountUpSection from './Components/CountUpSection.jsx';
 import MyDetails from './Pages/MyDetails.jsx';
@@ -21,8 +21,11 @@ import HomeLayout from './Layouts.jsx/HomeLayout.jsx';
 
 import SubscribeItem from './Pages/SubscribeItem.jsx';
 import BoxCardDetails from './Pages/BoxCardDetails.jsx';
-import RatingReview from './Components/ReviewSection.jsx';
+
 import ReviewSection from './Components/ReviewSection.jsx';
+import MyProfile from './Components/MyProfile.jsx';
+import Login from './Pages/Login.jsx';
+import Register from './Pages/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,10 +43,6 @@ const router = createBrowserRouter([
         Component: Slider
       },
       {
-          path:'/about',
-          Component:About
-      },
-      {
           path:'/shop',
           Component:Shop
       },
@@ -51,10 +50,7 @@ const router = createBrowserRouter([
           path:'/contact',
           Component:Contact
       },
-      {
-        path:'/cart',
-        Component:Cart
-      },
+     
       {
         path: '/howitworks',
         Component:HowItWorks
@@ -79,6 +75,18 @@ const router = createBrowserRouter([
       {
         path:'/reviewsection',
         Component:ReviewSection
+      },
+      {
+        path:'/myprofile',
+        Component:MyProfile
+      },
+      {
+        path:'/login',
+        Component:Login
+      },
+      {
+        path:'/register',
+        Component:Register
       }
     ]
     

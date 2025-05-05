@@ -28,17 +28,17 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h4 className="text-lg font-semibold mb-2">Contact</h4>
-          <p className="text-sm">Email: hello@pawbox.com</p>
-          <p className="text-sm">Phone: +1 234 567 890</p>
+          <p className="text-sm">Email : habibaislammim@gmail.com</p>
+          <p className="text-sm">Phone : 01873333****</p>
         </div>
 
         {/* Social */}
         <div>
           <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
           <div className="flex space-x-4 text-xl text-cyan-700">
-            <a href="#"><FaFacebookF className="hover:scale-110 duration-200" /></a>
-            <a href="#"><FaInstagram className="hover:scale-110 duration-200" /></a>
-            <a href="#"><FaTwitter className="hover:scale-110 duration-200" /></a>
+            <a target='_blank' href="https://www.facebook.com/mahiya.rahman.540132"><FaFacebookF className="hover:scale-110 duration-200" /></a>
+            <a target='_blank' href="https://www.instagram.com/mahiya_mimu/"><FaInstagram className="hover:scale-110 duration-200" /></a>
+            <a target='_blank' href="https://x.com/mahiya_rehman"><FaTwitter className="hover:scale-110 duration-200" /></a>
           </div>
         </div>
       </div>

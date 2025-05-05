@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const ReviewSection = () => {
   const [reviewInput, setReviewInput] = useState('');
@@ -17,13 +18,18 @@ const ReviewSection = () => {
       setReviewInput('');
       setRatingInput('');
     } else {
-      alert('Please enter a review and a valid rating (1-5)');
+      Swal.fire({
+        title: "OOPPSSS....",
+        text: "Please enter a review and a valid rating (1-5)",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
     }
   };
 
   return (
     <div className="mt-10 p-5 bg-gray-50 border border-gray-300  rounded-lg gloria-hallelujah-font">
-      <h2 className="text-xl font-semibold mb-4">Leave a Review</h2>
+      <h2 className="text-2xl font-semibold mb-4 satisfy-font">Leave a Review</h2>
 
       <textarea
         value={reviewInput}
@@ -50,7 +56,7 @@ const ReviewSection = () => {
       </button>
 
       <div className="mt-6">
-        <h3 className="text-lg font-bold mb-2">Reviews:</h3>
+        <h3 className="text-xl font-bold mb-2 satisfy-font">Reviews:</h3>
         {reviews.length === 0 && <p className="text-gray-500">No reviews yet.</p>}
         {reviews.map((rev, index) => (
           <div key={index} className="border-t border-gray-200 pt-3 mt-3">

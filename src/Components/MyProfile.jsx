@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 
 
-const AboutMe = () => {
+const MyProfile = () => {
     return (
         <div className='w-10/12 mx-auto lg:flex justify-around satisfy-font my-20'>
             <div className='mr-10'>
@@ -22,7 +22,7 @@ const AboutMe = () => {
                     Thank you for allowing us to be a part of your pet's life. We look forward to bringing smiles and wagging tails with each box!
 
                 </p>
-               <Link to={'mydetails'}> <button className='btn btn-accent mt-5 hover:bg-white text-black '>
+               <Link to={'/mydetails'}> <button className='btn btn-accent mt-5 hover:bg-white text-black '>
                 LEARN MORE ABOUT ME
                 </button> </Link>
 
@@ -33,4 +33,4 @@ const AboutMe = () => {
     );
 };
 
-export default AboutMe;
+export default MyProfile;

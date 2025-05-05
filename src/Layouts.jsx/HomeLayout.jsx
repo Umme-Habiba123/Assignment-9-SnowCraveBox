@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
 import Slider from '../Components/Slider';
 import CountUpSection from '../Components/CountUpSection';
-import AboutMe from '../Components/AboutMe';
+
 import HowItWorks from '../Components/HowItWorks';
 import SubscriptionCard from '../Components/SubscriptionCard';
+import SubscriptionBoxes from '../Components/SubscriptionBoxes ';
 
 const HomeLayout = () => {
     return (
@@ -13,7 +14,7 @@ const HomeLayout = () => {
            <SubscriptionCard></SubscriptionCard>
             <HowItWorks></HowItWorks>
             <CountUpSection></CountUpSection>
-            <AboutMe></AboutMe>
+           <SubscriptionBoxes></SubscriptionBoxes>
            </Suspense>
             
         </div>

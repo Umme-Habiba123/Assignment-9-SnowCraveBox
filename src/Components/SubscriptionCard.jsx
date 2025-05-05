@@ -3,17 +3,17 @@ import { Link } from 'react-router';
 import SubscribeItem from '../Pages/SubscribeItem';
 import { FaPaw } from "react-icons/fa";
 
-// const subscriptionPromise = fetch('/catDog.json').then(res => res.json())
+
 
 const SubscriptionCard = () => {
     const [subscription, setSubscription]=useState([])
-    // console.log(subscriptionPromise)
+ 
 
     useEffect(()=>{
         fetch('/catDog.json').then(res=>res.json())
         .then(data=>setSubscription(data))
     },[])
-    // const subscriptions = use(subscriptionPromise)
+   
     return (
         <div className='w-10/12 mx-auto'>
            <div className='my-15'>
