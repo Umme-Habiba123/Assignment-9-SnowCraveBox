@@ -6,15 +6,16 @@ import profile from '../assets/user.png'
 
 const Navbar = () => {
     const links=<>
-       <li className='text-cyan-500 '><NavLink to={'/'}>HOME</NavLink></li> 
-       <li className='text-cyan-500 ' ><NavLink to={'/about'}>ABOUT</NavLink></li> 
-       <li className='text-cyan-500 '><NavLink to={'/contact'}>CONTACT</NavLink></li> 
-       <li className='text-cyan-500 '><NavLink to={'/shop'}>SHOP</NavLink></li> 
+       <li className='text-cyan-500 hover:scale-105 '><NavLink to={'/'}>HOME</NavLink></li> 
+       <li className='text-cyan-500  hover:scale-105' ><NavLink to={'/about'}>ABOUT</NavLink></li> 
+       <li className='text-cyan-500 hover:scale-105 '><NavLink to={'/contact'}>CONTACT</NavLink></li> 
+       <li className='text-cyan-500  hover:scale-105'><NavLink to={'/shop'}>SHOP</NavLink></li> 
+       <li className='text-cyan-500  hover:scale-105'><NavLink to={'/cart'}>CART</NavLink></li> 
                        
     </>
     return (
         <div className='gloria-hallelujah-font w-10/12 mx-auto'>
-            <div className="navbar bg-base-100 ">
+            <div className="navbar ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,7 +37,7 @@ const Navbar = () => {
             
                 <div className="navbar-end ">
                     <img className='lg:mr-4  w-5 mr-2 lg:w-12' src={profile} alt="user photo" />
-                    <Link className="btn px-10 text-lg bg-cyan-200 hover:bg-white border-cyan-200">SIGN IN</Link>
+                    <Link className="btn px-10 text-lg bg-cyan-200 hover:bg-white border-cyan-200 hover:scale-110">SIGN IN</Link>
                 </div>
             </div>
         </div>

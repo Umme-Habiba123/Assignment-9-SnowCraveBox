@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "name": "Winter Paws Deluxe",
+    "thumbnail": "https://i.ibb.co.com/Z6mHkctk/dog-subscription-box-sniff-n-snack-homepage-MOBILE.webp",
+    "banner": "https://i.ibb.co.com/Z6mHkctk/dog-subscription-box-sniff-n-snack-homepage-MOBILE.webp",
+    "frequency": "Monthly",
+    "price": 29.99,
+    "description": "A cozy winter-themed box for dogs with treats, toys, and snuggles.",
+    "teach_category": "Dog",
+    "features": [
+      "Plush Toy",
+      "Grain-free Treats",
+      "Warm Blanket"
+    ],
+    "subscription_benefits": [
+      "Free shipping",
+      "Cancel anytime",
+      "Exclusive winter items"
+    ],
+    "rating": 4.8,
+    "number_of_reviews": 128
+  },
+  {
+    "id": 2,
+    "name": "Whisker Wonderland",
+    "thumbnail": "https://i.ibb.co.com/m5Hy0WWC/BANNER-1.webp",
+    "banner": "https://i.ibb.co.com/m5Hy0WWC/BANNER-1.webp",
+    "frequency": "Monthly",
+    "price": 24.99,
+    "description": "Snowy fun for cats with winter toys and delicious snacks.",
+    "teach_category": "Cat",
+    "features": [
+      "Catnip Toy",
+      "Salmon Treats",
+      "Mini Blanket"
+    ],
+    "subscription_benefits": [
+      "Surprise item monthly",
+      "No commitment",
+      "Holiday-themed gifts"
+    ],
+    "rating": 4.7,
+    "number_of_reviews": 112
+  },
+  {
+    "id": 3,
+    "name": "Puppy SnowPlay Box",
+    "thumbnail": "https://i.ibb.co.com/j1GxMS9/woofcrate-monthly-dog-toy-subscription-box-canada-1200x.webp",
+    "banner": "https://i.ibb.co.com/j1GxMS9/woofcrate-monthly-dog-toy-subscription-box-canada-1200x.webp",
+    "frequency": "Bi-Monthly",
+    "price": 34.99,
+    "description": "For young pups who love snow, play, and tasty winter chews.",
+    "teach_category": "Dog",
+    "features": [
+      "Rubber Snowball",
+      "Training Treats",
+      "Chew Toy"
+    ],
+    "subscription_benefits": [
+      "Vet-approved items",
+      "Durable toys",
+      "Puppy-safe packaging"
+    ],
+    "rating": 4.9,
+    "number_of_reviews": 86
+  },
+  {
+    "id": 4,
+    "name": "Cozy Cat Comfort Box",
+    "thumbnail": "https://i.ibb.co.com/p6BMD894/tough-chewer-dog-subscription-box-1200x.webp",
+    "banner": "https://i.ibb.co.com/p6BMD894/tough-chewer-dog-subscription-box-1200x.webp",
+    "frequency": "Monthly",
+    "price": 27.99,
+    "description": "Perfect for indoor winter-loving cats needing warm comfort.",
+    "teach_category": "Cat",
+    "features": [
+      "Fleece Hammock",
+      "Winter Themed Balls",
+      "Organic Treats"
+    ],
+    "subscription_benefits": [
+      "Cancel anytime",
+      "Soft and safe toys",
+      "New themes each month"
+    ],
+    "rating": 4.6,
+    "number_of_reviews": 95
+  },
+  {
+    "id": 5,
+    "name": "Furry Festive Treat Box",
+    "thumbnail": "https://i.ibb.co.com/W9S2c3M/dog-subscription-boxes.webp",
+    "banner": "https://i.ibb.co.com/W9S2c3M/dog-subscription-boxes.webp",
+    "frequency": "Quarterly",
+    "price": 39.99,
+    "description": "Premium seasonal treats for both cats and dogs.",
+    "teach_category": "Mixed",
+    "features": [
+      "Lamb Jerky",
+      "Christmas Toys",
+      "Mint Scent Balls"
+    ],
+    "subscription_benefits": [
+      "High-quality snacks",
+      "Holiday themes",
+      "Bundle value"
+    ],
+    "rating": 4.5,
+    "number_of_reviews": 150
+  },
+  {
+    "id": 6,
+    "name": "SnowTail Sampler",
+    "thumbnail": "https://i.ibb.co.com/pBCsLDmP/kong-cover.jpg",
+    "banner": "https://i.ibb.co.com/pBCsLDmP/kong-cover.jpg",
+    "frequency": "Monthly",
+    "price": 19.99,
+    "description": "An affordable winter treat box for smaller pets.",
+    "teach_category": "Dog",
+    "features": [
+      "Mini Chews",
+      "Squeaky Toy",
+      "Wool Socks"
+    ],
+    "subscription_benefits": [
+      "Easy to gift",
+      "Affordable",
+      "Monthly themes"
+    ],
+    "rating": 4.3,
+    "number_of_reviews": 64
+  },
+  {
+    "id": 7,
+    "name": "Meow Magic Winter Box",
+    "thumbnail": "https://i.ibb.co.com/V0RYDbtm/durapaw-dog-toy-subscription-box-store-banner.webp",
+    "banner": "https://i.ibb.co.com/V0RYDbtm/durapaw-dog-toy-subscription-box-store-banner.webp",
+    "frequency": "Monthly",
+    "price": 25.99,
+    "description": "Winter themed magical toys and organic cat snacks.",
+    "teach_category": "Cat",
+    "features": [
+      "Interactive Wand",
+      "Organic Snacks",
+      "Snowflake Collar"
+    ],
+    "subscription_benefits": [
+      "Natural ingredients",
+      "Handmade toys",
+      "Reward system"
+    ],
+    "rating": 4.8,
+    "number_of_reviews": 102
+  },
+  {
+    "id": 8,
+    "name": "Frosty Furball Box",
+    "thumbnail": "https://i.ibb.co.com/NdqMvS6c/DOG-SAPR-Pet-Friendly-Dog-Subscription-Box.png",
+    "banner": "https://i.ibb.co.com/NdqMvS6c/DOG-SAPR-Pet-Friendly-Dog-Subscription-Box.png",
+    "frequency": "Bi-Monthly",
+    "price": 30.99,
+    "description": "Fur-friendly winter essentials for pets with sensitive skin.",
+    "teach_category": "Dog",
+    "features": [
+      "Hypoallergenic Snacks",
+      "Wool Toy",
+      "Moisturizing Paw Balm"
+    ],
+    "subscription_benefits": [
+      "Skin safe",
+      "Recommended by groomers",
+      "Eco-friendly items"
+    ],
+    "rating": 4.4,
+    "number_of_reviews": 73
+  },
+  {
+    "id": 9,
+    "name": "Santa Paw Special",
+    "thumbnail": "https://i.ibb.co.com/wZwm72GN/Boutique-Dog-Box-Hero-001-Square-1.webp",
+    "banner": "https://i.ibb.co.com/wZwm72GN/Boutique-Dog-Box-Hero-001-Square-1.webp",
+    "frequency": "Yearly (Holiday only)",
+    "price": 49.99,
+    "description": "Special Christmas box with festive cheer for cats and dogs.",
+    "teach_category": "Mixed",
+    "features": [
+      "Holiday Plush",
+      "Mint Treats",
+      "Santa Hat"
+    ],
+    "subscription_benefits": [
+      "Perfect gift",
+      "One-time box",
+      "Themed packaging"
+    ],
+    "rating": 4.9,
+    "number_of_reviews": 210
+  },
+  {
+    "id": 10,
+    "name": "Mini Tail Joy Box",
+    "thumbnail": "https://i.ibb.co.com/LhhhHVMR/DSCF9107-fallback.jpg",
+    "banner": "https://i.ibb.co.com/LhhhHVMR/DSCF9107-fallback.jpg",
+    "frequency": "Monthly",
+    "price": 17.99,
+    "description": "Tiny treats and toys for small breed pets.",
+    "teach_category": "Dog",
+    "features": [
+      "Crunchy Treats",
+      "Tiny Tug Toy",
+      "Winter Socks"
+    ],
+    "subscription_benefits": [
+      "Great for small pets",
+      "Cheaper option",
+      "Monthly delivery"
+    ],
+    "rating": 4.2,
+    "number_of_reviews": 48
+  }
+]

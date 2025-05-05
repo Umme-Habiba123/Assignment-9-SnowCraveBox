@@ -5,8 +5,6 @@ import Root from './Root/Root.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 
 
-
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,6 +12,14 @@ import {
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
 import Contact from './Pages/Contact.jsx';
+import Cart from './Pages/Cart.jsx';
+import HowItWorks from './Components/HowItWorks.jsx';
+import CountUpSection from './Components/CountUpSection.jsx';
+import MyDetails from './Pages/MyDetails.jsx';
+import Slider from './Components/Slider.jsx';
+import HomeLayout from './Layouts.jsx/HomeLayout.jsx';
+
+import SubscribeItem from './Pages/SubscribeItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +29,12 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        index:true
+        index:true,
+        Component:HomeLayout
+      },
+      {
+        path:'/slider',
+        Component: Slider
       },
       {
           path:'/about',
@@ -36,10 +47,31 @@ const router = createBrowserRouter([
       {
           path:'/contact',
           Component:Contact
+      },
+      {
+        path:'/cart',
+        Component:Cart
+      },
+      {
+        path: '/howitworks',
+        Component:HowItWorks
+      },
+      {
+        path:'/countupsection',
+        Component:CountUpSection
+      },
+      {
+        path:'/mydetails',
+        Component:MyDetails
+      },
+      {
+        path:'/subscribe/:id',
+        Component:SubscribeItem
       }
     ]
     
   },
+  
 ]);
 
 
