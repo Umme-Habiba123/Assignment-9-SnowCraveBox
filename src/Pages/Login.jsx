@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
@@ -10,15 +10,26 @@ import { FaRegEye } from "react-icons/fa";
 
 const Login = () => {
 
+    const provider = new GoogleAuthProvider()
+
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
-    const [showPassword, setShowPassword]=useState(false)
+    const [showPassword, setShowPassword] = useState(false)
+
+    const handleGoogleSignIn = () => {
+        console.log('google login clicked')
+        signInWithPopup(auth, provider)
+        .then(result=>{
+            console.log(result)
+        }).catch(error=>console.log(error))
+    }
 
     const handleLogIn = e => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
-        console.log(email, password)
+        const checkbox = e.target.checkbox.checked
+        console.log(email, password, checkbox)
 
 
         if (password.length < 6) {
@@ -36,6 +47,11 @@ const Login = () => {
         }
         else {
             setErrorMessage('')
+        }
+
+        if (!checkbox) {
+            setErrorMessage('Please Accept Our Terms and Conditions')
+            return
         }
 
         createUserWithEmailAndPassword(auth, email, password).then(result => {
@@ -72,24 +88,35 @@ const Login = () => {
                                 />
                                 <label className="label">Password</label>
                                 <div className=' relative'>
-                                <input
-                                    type={showPassword? 'text':"password"}
-                                    className="input"
-                                    placeholder=" 🔒Type your password"
-                                    name='password' />
-                                  <button
-                                  onClick={()=>setShowPassword(!showPassword)}
-                                   className='  btn-xs top-3 absolute right-8'>
-                                  {
-                                    showPassword? <FaRegEye size={18}/> :  <LuEyeClosed  size={18}/>
-                                  }
-                                   
-                                   </button>
+                                    <input
+                                        type={showPassword ? 'text' : "password"}
+                                        className="input"
+                                        placeholder=" 🔒Type your password"
+                                        name='password' />
+
+                                    <button
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        className='  btn-xs top-3 absolute right-8'>
+                                        {
+                                            showPassword ? <FaRegEye size={18} /> : <LuEyeClosed size={18} />
+                                        }
+
+                                    </button>
                                 </div>
-                                  
+
 
                                 <div>
                                     <a className="link link-hover">Forgot password?</a></div>
+
+                                {/* checkbox */}
+                                <label className="label mt-2 text-sm">
+                                    <input type="checkbox"
+                                        name='checkbox'
+                                        className="checkbox" />
+                                    Accept Terms and Conditions
+                                </label>
+
+
                                 <button className="btn btn-neutral text-lg bg-cyan-500 border border-cyan-500 hover:bg-white hover:text-black mt-4">Login</button>
                             </form>
 
@@ -103,8 +130,8 @@ const Login = () => {
                             <p className='text-center text-gray-500 mt-5'>Or sign up Using</p>
                             <div className='flex justify-center gap-3 mt-2'>
                                 <h1><FaFacebook size={25} /></h1>
-                                <Link to={'/'}>
-                                    <h1><FaGoogle size={25} /></h1>
+                                <Link >
+                                    <h1 onClick={handleGoogleSignIn}><FaGoogle size={25} /></h1>
                                 </Link>
                                 <h1><FaTwitter size={25} />
                                 </h1>
