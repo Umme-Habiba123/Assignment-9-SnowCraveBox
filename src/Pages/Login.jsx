@@ -1,47 +1,87 @@
-import {  FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import React, { use, useState } from 'react';
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import React, { use, useRef, useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { auth } from '../firebase.config';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { GithubAuthProvider } from 'firebase/auth/web-extension';
+// import Swal from 'sweetalert2';
 
 const Login = () => {
 
-    const navigate=useNavigate()
-         
-    const {setLoading}=use(AuthContext)
+    const emailRef = useRef()
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleForgetPassword = () => {
+
+        console.log(emailRef.current.value)
+        const email = emailRef.current.value
+
+        if (!email) {
+            setErrorMessage('Please enter your email first !')
+            return
+        }
+
+        setErrorMessage(' ')
+
+        sendPasswordResetEmail(auth, email)
+            .then(result => {
+                console.log(result)
+                alert('please check your email')
+                setTimeout(() => {
+                    navigate('/resetpassword')
+                }, 1000)
+
+            }).catch(error => {
+                console.log(error)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'oapss sorry!!',
+                });
+            })
+        setErrorMessage(errorMessage)
+    }
+
+
+
+    const { setLoading } = use(AuthContext)
     const provider = new GoogleAuthProvider()
-    const providerF= new FacebookAuthProvider()
+
 
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
 
     // Google log in-------
-    const handleGoogleSignIn = () => { 
+    const handleGoogleSignIn = () => {
         console.log('google login clicked')
         signInWithPopup(auth, provider)
-        .then(result=>{
-            console.log(result)
-            navigate('/')
-        }).catch(error=>console.log(error))
+            .then(result => {
+                console.log(result)
+                navigate('/')
+            }).catch(error => console.log(error))
     }
 
-// facebook login-------
+    // facebook login-------
 
-    const handleFacebookLogIn=()=>{
+    const handleFacebookLogIn = () => {
         console.log('loged in by facebook')
 
-        signInWithPopup(auth, providerF).then(result=>{
-            console.log(result)
-        }).catch(error=>{
-            console.log(error)
-        })
+    }
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGithublogin = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                console.log(result)
+            }).catch(error => console.log(error))
     }
 
     const handleLogIn = e => {
@@ -74,6 +114,8 @@ const Login = () => {
             return
         }
 
+
+
         signInWithEmailAndPassword(auth, email, password).then(result => {
             setLoading(true)
             console.log(result)
@@ -83,15 +125,17 @@ const Login = () => {
                 text: 'You have logged in successfully.',
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Continue'
-              }).then(() => {
-                navigate('/');
-              });
-              
+            }).then(() => {
+                navigate(location?.state || '/');
+            });
+
             setSuccess(true)
         }).catch(error => {
             console.log(error.message)
             setSuccess(false)
         })
+
+
 
 
 
@@ -104,13 +148,14 @@ const Login = () => {
                 <div className="hero-content flex-col ml-80 ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Sign in</h1>
-                      
+
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
                             <form onSubmit={handleLogIn} className="fieldset">
                                 <label className="label ">Email</label>
                                 <input
+                                    ref={emailRef}
                                     type="email"
                                     className="input  bg-gray-100 border-none" placeholder="📩 Type your email"
                                     name='email'
@@ -134,9 +179,9 @@ const Login = () => {
                                     </button>
                                 </div>
 
-
                                 <div>
-                                    <a className="link link-hover">Forgot password?</a></div>
+                                    <button type='button' onClick={handleForgetPassword} className="link link-hover hover:text-blue-600 ">Forgot password?</button></div>
+
 
                                 {/* checkbox */}
                                 <label className="label mt-2 text-sm">
@@ -163,8 +208,9 @@ const Login = () => {
                                 <Link >
                                     <h1 onClick={handleGoogleSignIn}><FaGoogle size={25} /></h1>
                                 </Link>
-                                <h1><FaGithub size={25}/>
-                                </h1>
+                                <Link>
+                                    <h1 onClick={handleGithublogin}><FaGithub size={25} />
+                                    </h1></Link>
                             </div>
 
                             <div className='mt-10 text-center'>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ForgetPassword = () => {
+    
     return (
         <div>
             <div className="join">

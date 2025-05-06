@@ -30,6 +30,7 @@ import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Blog from './Pages/Blog.jsx';
 import PrivateRoute from './AuthProvider/PrivateRoute.jsx';
 import ForgetPassword from './Pages/ForgetPassword.jsx';
+import ResetPassword from './Pages/ResetPassword.jsx';
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
       {
         path:'/forgetpassword',
         Component:ForgetPassword
+      },
+      {
+        path:'/resetpassword',
+        Component:ResetPassword
       }
     ]
 

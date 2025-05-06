@@ -8,6 +8,7 @@ import { auth } from '../firebase.config';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa";
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
 
@@ -76,13 +77,22 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, email, password).then(result => {
             setLoading(true)
             console.log(result)
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successful!',
+                text: 'Your account has been created successfully.',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Continue'
+              })
+              
             setErrorMessage('')
             setSuccess(true)
             
             updateUser({displayName: firstName +' '+ lastName, photoURL:photoURL}).then(()=>{
               signOut(auth).then(result=>{
                 console.log(result)
-                navigate('/login')
+                navigate('/')
               })
                
             }).catch(error=>console.log(error))
