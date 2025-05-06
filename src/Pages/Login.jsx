@@ -1,27 +1,41 @@
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { Link } from 'react-router';
 import { auth } from '../firebase.config';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa";
 
 const Login = () => {
-
+ 
     const provider = new GoogleAuthProvider()
+    const providerF= new FacebookAuthProvider()
 
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
 
+    // Google log in-------
     const handleGoogleSignIn = () => {
         console.log('google login clicked')
         signInWithPopup(auth, provider)
         .then(result=>{
             console.log(result)
         }).catch(error=>console.log(error))
+    }
+
+// facebook login-------
+
+    const handleFacebookLogIn=()=>{
+        console.log('loged in by facebook')
+
+        signInWithPopup(auth, providerF).then(result=>{
+            console.log(result)
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     const handleLogIn = e => {
@@ -74,7 +88,7 @@ const Login = () => {
                 <div className="hero-content flex-col ml-80 ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Sign in</h1>
-
+                      
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
@@ -82,7 +96,7 @@ const Login = () => {
                                 <label className="label ">Email</label>
                                 <input
                                     type="email"
-                                    className="input " placeholder="📩 Type your email"
+                                    className="input  bg-gray-100 border-none" placeholder="📩 Type your email"
                                     name='email'
                                     required
                                 />
@@ -90,7 +104,7 @@ const Login = () => {
                                 <div className=' relative'>
                                     <input
                                         type={showPassword ? 'text' : "password"}
-                                        className="input"
+                                        className="input  bg-gray-100 border-none"
                                         placeholder=" 🔒Type your password"
                                         name='password' />
 
@@ -129,11 +143,11 @@ const Login = () => {
 
                             <p className='text-center text-gray-500 mt-5'>Or sign up Using</p>
                             <div className='flex justify-center gap-3 mt-2'>
-                                <h1><FaFacebook size={25} /></h1>
+                                <h1 onClick={handleFacebookLogIn} ><FaFacebook size={25} /></h1>
                                 <Link >
                                     <h1 onClick={handleGoogleSignIn}><FaGoogle size={25} /></h1>
                                 </Link>
-                                <h1><FaTwitter size={25} />
+                                <h1><FaGithub size={25}/>
                                 </h1>
                             </div>
 

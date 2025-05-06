@@ -2,7 +2,7 @@ import React from 'react';
 import navbarPhoto from '../assets/navbar-photo.png'
 import { Link, NavLink } from 'react-router';
 import profile from '../assets/user.png'
-import { FaShoppingCart } from "react-icons/fa";
+import { IoPawOutline } from "react-icons/io5";
 
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
        <li className='text-cyan-500  hover:scale-105' ><NavLink to={'/myprofile'}>MY PROFILE</NavLink></li> 
        <li className='text-cyan-500 hover:scale-105 '><NavLink to={'/contact'}>CONTACT</NavLink></li> 
        <li className='text-cyan-500  hover:scale-105'><NavLink to={'/shop'}>SHOP</NavLink></li> 
-       <li className='text-cyan-500  hover:scale-105 mt-1'><NavLink to={'/cart'}><FaShoppingCart /></NavLink></li> 
+       <li className='text-cyan-500  hover:scale-105 mt-1'><NavLink to={'/cart'}><IoPawOutline  size={25}/></NavLink></li> 
                        
     </>
     return (
