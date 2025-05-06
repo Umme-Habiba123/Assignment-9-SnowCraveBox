@@ -4,6 +4,7 @@ import { auth } from '../firebase.config';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
 
+
 const ResetPassword = () => {
     const emailRef = useRef();
     const [error, setError] = useState('');
@@ -33,8 +34,13 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className=' flex items-center justify-center gloria-hallelujah-font'>
-            <div className='w-96 mb-38 mt-10 bg-white p-6 rounded-lg shadow-lg'>
+       <div className=''>
+        <p className='text-3xl text-center text-gray-700 gloria-hallelujah-font '>Please Reset your Password !</p>
+
+         <div className=' flex items-center justify-center  '>
+           
+            <div className='w-96 mb-38 mt-4 bg-white p-6 rounded-lg shadow-lg'>
+           
                
             <label className="label mb-1 ">📩 Email</label>
                 <input
@@ -56,6 +62,7 @@ const ResetPassword = () => {
                 {success && <p className='text-green-500 mt-2 text-sm'>{success}</p>}
             </div>
         </div>
+       </div>
     );
 };
 

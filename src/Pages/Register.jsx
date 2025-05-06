@@ -77,7 +77,7 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, email, password).then(result => {
             setLoading(true)
             console.log(result)
-
+             
             Swal.fire({
                 icon: 'success',
                 title: 'Registration Successful!',
@@ -85,14 +85,14 @@ const Register = () => {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Continue'
               })
-              
+          
             setErrorMessage('')
             setSuccess(true)
             
             updateUser({displayName: firstName +' '+ lastName, photoURL:photoURL}).then(()=>{
               signOut(auth).then(result=>{
                 console.log(result)
-                navigate('/')
+                navigate('/login')
               })
                
             }).catch(error=>console.log(error))

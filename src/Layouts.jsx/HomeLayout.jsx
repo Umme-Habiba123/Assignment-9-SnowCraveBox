@@ -6,6 +6,8 @@ import HowItWorks from '../Components/HowItWorks';
 import SubscriptionCard from '../Components/SubscriptionCard';
 import SubscriptionBoxes from '../Components/SubscriptionBoxes ';
 import AboutMe from '../Components/AboutMe';
+import Swiper from 'swiper';
+import MySwiper from '../Components/MySwiper';
 
 const HomeLayout = () => {
     return (
@@ -17,6 +19,7 @@ const HomeLayout = () => {
             <CountUpSection></CountUpSection>
            <SubscriptionBoxes></SubscriptionBoxes>
            <AboutMe></AboutMe>
+           <MySwiper></MySwiper>
            {/* </Suspense> */}
             
         </div>
