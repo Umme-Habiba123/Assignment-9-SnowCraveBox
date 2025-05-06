@@ -33,11 +33,7 @@ const Login = () => {
         sendPasswordResetEmail(auth, email)
             .then(result => {
                 console.log(result)
-                alert('please check your email')
-                setTimeout(() => {
-                    navigate('/resetpassword')
-                }, 1000)
-
+                navigate('/resetpassword')
             }).catch(error => {
                 console.log(error)
                 Swal.fire({
