@@ -14,25 +14,27 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
+     
         <div>
-          <h4 className="text-lg font-semibold mb-2">Quick Links</h4>
-          <ul className="space-y-1 text-sm">
-            <li><a href="#" className="hover:underline">Home</a></li>
-            <li><a href="#" className="hover:underline">How It Works</a></li>
-            <li><a href="#" className="hover:underline">Shop</a></li>
-            <li><a href="#" className="hover:underline">FAQ</a></li>
-          </ul>
-        </div>
+  <h4 className="text-lg font-semibold mb-2">Quick Links</h4>
+  <ul className="space-y-1 text-sm">
+    <li><a href="#" className="hover:underline">Home</a></li>
+    <li><a href="#" className="hover:underline">How It Works</a></li>
+    <li><a href="#" className="hover:underline">Shop</a></li>
+    <li><a href="#" className="hover:underline">FAQ</a></li>
+    <li><a href="/terms" className="hover:underline">Terms & Conditions</a></li>
+    <li><a href="/privacy" className="hover:underline">Privacy Policy</a></li>
+  </ul>
+</div>
 
-        {/* Contact */}
+     
         <div>
           <h4 className="text-lg font-semibold mb-2">Contact</h4>
           <p className="text-sm">Email : habibaislammim@gmail.com</p>
           <p className="text-sm">Phone : 01873333****</p>
         </div>
 
-        {/* Social */}
+    
         <div>
           <h4 className="text-lg font-semibold mb-2">Follow Us</h4>
           <div className="flex space-x-4 text-xl text-cyan-700">
@@ -43,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Note */}
+    
       <div className="text-center mt-10 text-sm text-gray-600">
         © 2025 SnowCraveBox. Made with 🐶❤️🐱 in Winter FrostedDelights.
       </div>

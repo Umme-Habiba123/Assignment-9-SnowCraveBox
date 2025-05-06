@@ -10,7 +10,7 @@ import {
   RouterProvider,
 } from "react-router";
 
-import Shop from './Pages/Shop.jsx';
+
 import Contact from './Pages/Contact.jsx';
 
 import HowItWorks from './Components/HowItWorks.jsx';
@@ -26,77 +26,96 @@ import ReviewSection from './Components/ReviewSection.jsx';
 import MyProfile from './Components/MyProfile.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
+import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import Blog from './Pages/Blog.jsx';
+import PrivateRoute from './AuthProvider/PrivateRoute.jsx';
+import ForgetPassword from './Pages/ForgetPassword.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component:Root,
+    Component: Root,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    hydrateFallbackElement:<span className="loading loading-ring loading-xl"></span>,
+    children: [
       {
-        path:'/',
-        index:true,
-        Component:HomeLayout
+        path: '/',
+        index: true,
+        Component: HomeLayout
       },
       {
-        path:'/slider',
+        path: '/slider',
         Component: Slider
       },
       {
-          path:'/shop',
-          Component:Shop
+        path: '/blog',
+        element:<PrivateRoute>
+          <Blog></Blog>
+        </PrivateRoute>
       },
       {
-          path:'/contact',
-          Component:Contact
+        path: '/contact',
+        element:<PrivateRoute>
+          <Contact></Contact>
+        </PrivateRoute>
       },
-     
+
       {
         path: '/howitworks',
-        Component:HowItWorks
+        Component: HowItWorks
       },
       {
-        path:'/countupsection',
-        Component:CountUpSection
+        path: '/countupsection',
+        Component: CountUpSection
       },
       {
-        path:'/mydetails',
-        Component:MyDetails
+        path: '/mydetails',
+        Component: MyDetails
       },
       {
-        path:'/subscribe/:id',
-        Component:SubscribeItem
+        path: '/subscribe/:id',
+        Component: SubscribeItem
       },
       {
-        path:'/boxcarddetails/:id',
-        Component:BoxCardDetails,
-        loader:()=>fetch('/catDog.json')
+        path: '/boxcarddetails/:id',
+        element: <PrivateRoute>
+          <BoxCardDetails></BoxCardDetails>
+        </PrivateRoute>,
+        loader: () => fetch('/catDog.json')
       },
       {
-        path:'/reviewsection',
-        Component:ReviewSection
+        path: '/reviewsection',
+        Component: ReviewSection
       },
       {
-        path:'/myprofile',
-        Component:MyProfile
+        path: '/myprofile',
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute>
       },
       {
-        path:'/login',
-        Component:Login
+        path: '/login',
+        Component: Login
       },
       {
-        path:'/register',
-        Component:Register
+        path: '/register',
+        Component: Register
+      },
+      {
+        path:'/forgetpassword',
+        Component:ForgetPassword
       }
     ]
-    
+
   },
-  
+
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

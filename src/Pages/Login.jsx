@@ -1,15 +1,20 @@
-import { createUserWithEmailAndPassword, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React, { useState } from 'react';
+import {  FacebookAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import React, { use, useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { auth } from '../firebase.config';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa";
+import Swal from 'sweetalert2';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
- 
+
+    const navigate=useNavigate()
+         
+    const {setLoading}=use(AuthContext)
     const provider = new GoogleAuthProvider()
     const providerF= new FacebookAuthProvider()
 
@@ -18,11 +23,12 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
 
     // Google log in-------
-    const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = () => { 
         console.log('google login clicked')
         signInWithPopup(auth, provider)
         .then(result=>{
             console.log(result)
+            navigate('/')
         }).catch(error=>console.log(error))
     }
 
@@ -68,9 +74,19 @@ const Login = () => {
             return
         }
 
-        createUserWithEmailAndPassword(auth, email, password).then(result => {
+        signInWithEmailAndPassword(auth, email, password).then(result => {
+            setLoading(true)
             console.log(result)
-            setErrorMessage('')
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful!',
+                text: 'You have logged in successfully.',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Continue'
+              }).then(() => {
+                navigate('/');
+              });
+              
             setSuccess(true)
         }).catch(error => {
             console.log(error.message)

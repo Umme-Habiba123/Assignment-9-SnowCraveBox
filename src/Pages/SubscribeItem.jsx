@@ -9,10 +9,10 @@ const SubscribeItem = ({ item }) => {
     };
 
     return (
-        <div className="flex justify-center mb-2 fontgloria-hallelujah-font">
+        <div  className=" mb-2 p-5 fontgloria-hallelujah-font">
             <div
-                className="card w-80 bg-white shadow-xl rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100"
-                onClick={handleCardClick}
+                className="card bg-white shadow-xl rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:bg-gray-100"
+                
             >
                 <figure>
                     <img
@@ -43,12 +43,12 @@ const SubscribeItem = ({ item }) => {
 
                     <div className="mt-1 flex justify-between items-center">
                         <div className="w-1/2 flex justify-between">
-                            <button className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black">
+                            <button className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black ml-10">
                                 Subscribe
                             </button>
-                          <Link to={`/boxcarddetails/${id}`}>
-                          <button className="btn btn-secondary text-xs bg-gray-400 border-gray-400 ml-30 px-7  text-black hover:bg-white">
-                            View More
+                          <Link onClick={handleCardClick} to={`/boxcarddetails/${id}`}>
+                          <button className="btn ml-50 btn-secondary text-xs text-nowrap bg-gray-400 border-gray-400   text-black hover:bg-white">
+                           View More
                            </button>
                           </Link>
                           

@@ -37,12 +37,12 @@ const SubscriptionBoxes = () => {
               opacity: 1,
               x: 0,
               y: 0,
-              scale: 1, // Scale animation for smooth zoom-in effect
-              rotate: 0, // Optional rotation effect
+              scale: 1, 
+              rotate: 0,
             }}
             whileHover={{
-              scale: 1.05, // Slight zoom-in on hover
-              rotate: 5,   // Optional rotation on hover
+              scale: 1.05, 
+              rotate: 5, 
             }}
             transition={{
               duration: 0.8,

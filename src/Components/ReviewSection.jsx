@@ -1,5 +1,7 @@
+import { FaArrowLeft } from "react-icons/fa";
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { Link } from "react-router";
 
 const ReviewSection = () => {
   const [reviewInput, setReviewInput] = useState('');
@@ -28,7 +30,8 @@ const ReviewSection = () => {
   };
 
   return (
-    <div className="mt-10 p-5 bg-gray-50 border border-gray-300  rounded-lg gloria-hallelujah-font">
+   <div className='gloria-hallelujah-font'>
+     <div className="mt-10 p-5 bg-gray-50 border border-gray-300  rounded-lg ">
       <h2 className="text-2xl font-semibold mb-4 satisfy-font">Leave a Review</h2>
 
       <textarea
@@ -66,7 +69,13 @@ const ReviewSection = () => {
           </div>
         ))}
       </div>
+     
     </div>
+   <Link to={'/'}>
+   <button className='btn hover:bg-cyan-400 hover:text-black px-8 text-lg text-cyan-500 mt-3'><FaArrowLeft size={18}/>Back to home</button>
+   </Link>
+   </div>
+    
   );
 };
 

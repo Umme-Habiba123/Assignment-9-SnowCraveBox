@@ -1,14 +1,19 @@
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import React, { useState } from 'react';
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import React, { use, useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { auth } from '../firebase.config';
 import { LuEyeClosed } from "react-icons/lu";
 import { FaRegEye } from "react-icons/fa";
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const { user, setUser, setLoading, updateUser } = use(AuthContext) 
+
+    const navigate=useNavigate()
 
     const provider = new GoogleAuthProvider()
 
@@ -19,29 +24,31 @@ const Register = () => {
     const handleGoogleRegister = () => {
         console.log('google login clicked')
         signInWithPopup(auth, provider)
-        .then(result=>{
-            console.log(result)
-        }).catch(error=>console.log(error))
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => console.log(error))
     }
-  
-    const githubProvider=new GithubAuthProvider()
 
-    const handleGithubRegister=()=>{
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGithubRegister = () => {
         signInWithPopup(auth, githubProvider)
-        .then(result=>{
-            console.log(result)
-        }).catch(error=>console.log(error))
+            .then(result => {
+                console.log(result)
+            }).catch(error => console.log(error))
     }
 
     const handleRegister = e => {
         e.preventDefault()
-        const firstName=e.target.firstName.value
-        const lastName=e.target.lastName.value
-        const photoURL=e.target.photoURL.value
+
+        const firstName = e.target.firstName.value
+        const lastName = e.target.lastName.value
+        const photoURL = e.target.photoURL.value
         const email = e.target.email.value
         const password = e.target.password.value
         const checkbox = e.target.checkbox.checked
-        console.log(email, password, checkbox, firstName, lastName,photoURL)
+        console.log(email, password, checkbox, firstName, lastName, photoURL)
 
 
         if (password.length < 6) {
@@ -67,11 +74,22 @@ const Register = () => {
         }
 
         createUserWithEmailAndPassword(auth, email, password).then(result => {
+            setLoading(true)
             console.log(result)
             setErrorMessage('')
             setSuccess(true)
+            
+            updateUser({displayName: firstName +' '+ lastName, photoURL:photoURL}).then(()=>{
+              signOut(auth).then(result=>{
+                console.log(result)
+                navigate('/login')
+              })
+               
+            }).catch(error=>console.log(error))
+           
         }).catch(error => {
             console.log(error.message)
+            setUser(user)
             setSuccess(false)
         })
 
@@ -94,28 +112,31 @@ const Register = () => {
                             <form onSubmit={handleRegister} className="fieldset">
                                 {/* 1st-inpurt */}
 
-                               <div className='flex gap-4'>
-                              <div>
-                              <label className="label ">First Name</label>
-                                <input
-                                    type="name"
-                                    className="input bg-gray-100 border-none" placeholder="👤First Name"
-                                    name='firstName'
-                                    required
-                                />
-                              </div>
-                            {/* last name */}
-                             <div>
-                             <label className="label ">Last Name</label>
-                                <input
-                                    type="name"
-                                    className="input bg-gray-100 border-none " placeholder=" 👤Last name"
-                                    name='lastName'
-                                    required
-                                />
-                             </div>
-                               </div>
-                                            {/* 2nd--input */}
+                                <div className='flex gap-4'>
+                                    <div>
+
+                                        <label className="label ">First Name</label>
+
+                                        <input
+
+                                            type="name"
+                                            className="input bg-gray-100 border-none" placeholder="👤First Name"
+                                            name='firstName'
+                                            required
+                                        />
+                                    </div>
+                                    {/* last name */}
+                                    <div>
+                                        <label className="label ">Last Name</label>
+                                        <input
+                                            type="name"
+                                            className="input bg-gray-100 border-none " placeholder=" 👤Last name"
+                                            name='lastName'
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                {/* 2nd--input */}
                                 <label className="label ">PhotoURL</label>
                                 <input
                                     type="photoURL"
@@ -123,7 +144,7 @@ const Register = () => {
                                     name='photoURL'
                                     required
                                 />
-                                            {/* 3rd--input */}
+                                {/* 3rd--input */}
                                 <label className="label ">Email</label>
                                 <input
                                     type="email"
@@ -131,7 +152,7 @@ const Register = () => {
                                     name='email'
                                     required
                                 />
-                                            {/* 4th--input */}
+                                {/* 4th--input */}
                                 <label className="label">Password</label>
                                 <div className=' relative'>
                                     <input
@@ -151,20 +172,16 @@ const Register = () => {
                                     </button>
                                 </div>
 
-
-                                <div>
-                                    <a className="link link-hover">Forgot password?</a></div>
-
                                 {/* checkbox */}
                                 <label className="label mt-2 text-sm">
                                     <input type="checkbox"
                                         name='checkbox'
                                         className="checkbox" />
-                                    Accept Terms and Conditions
+                                   I accept the<span className='text-blue-500'>Terms of  Use</span>&<span className='text-blue-500'>Privacy policy</span>
                                 </label>
 
 
-                                <button className="btn btn-neutral text-lg bg-cyan-500 border border-cyan-500 hover:bg-white hover:text-black mt-4">Login</button>
+                                <button type='submit' className="btn btn-neutral text-lg bg-cyan-500 border border-cyan-500 hover:bg-white hover:text-black mt-4">SIGN UP</button>
                             </form>
 
                             {
@@ -177,14 +194,14 @@ const Register = () => {
                             <p className='text-center text-gray-500 mt-5'>Or sign up Using</p>
                             <div className='flex justify-center gap-3 mt-2'>
                                 <Link>
-                                <h1><FaFacebook size={25} /></h1>
+                                    <h1><FaFacebook size={25} /></h1>
                                 </Link>
                                 <Link >
                                     <h1 onClick={handleGoogleRegister}><FaGoogle size={25} /></h1>
                                 </Link>
-                              <Link>
-                              <h1 onClick={handleGithubRegister}><FaGithub size={25}/>
-                              </h1></Link>
+                                <Link>
+                                    <h1 onClick={handleGithubRegister}><FaGithub size={25} />
+                                    </h1></Link>
                             </div>
 
                             <div className='mt-2 text-center'>

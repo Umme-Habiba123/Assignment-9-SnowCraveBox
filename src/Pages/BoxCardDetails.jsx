@@ -8,7 +8,7 @@ const BoxCardDetails = () => {
     const [item, setItem] = useState(null);
 
     useEffect(() => {
-        const boxCardDetails = data.find((singleCard) => singleCard.id == id);
+        const boxCardDetails = data?.find((singleCard) => singleCard.id == id);
         if (boxCardDetails) {
             setItem(boxCardDetails);
         }
@@ -25,7 +25,7 @@ const BoxCardDetails = () => {
         <div className="max-w-6xl mx-auto p-6">
             {item ? (
                 <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
-                    {/* Image Section */}
+            
                     <div className="md:w-1/2">
                         <img
                             src={item.banner}
@@ -34,7 +34,7 @@ const BoxCardDetails = () => {
                         />
                     </div>
 
-                    {/* Details Section */}
+                   
                     <div className="md:w-1/2 p-6">
                         <h1 className="text-3xl font-bold text-gray-800">{item.name}</h1>
                         <p className="text-gray-600 mt-2">{item.description}</p>
