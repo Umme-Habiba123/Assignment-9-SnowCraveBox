@@ -3,7 +3,7 @@ SnowCraveBox
 
 purpose: SnowCraveBox is a subscription box service designed for pet lovers, providing monthly curated boxes filled with high-quality products for cats and dogs. Whether you're a cat parent or a dog lover, SnowCraveBox delivers a range of treats, toys, and accessories tailored to your pet’s needs.
 
-Live URL:
+Live URL: https://keen-zuccutto-a95ba4.netlify.app/blog
 
 
 
