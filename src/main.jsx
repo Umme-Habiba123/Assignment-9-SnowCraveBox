@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Root from './Root/Root.jsx';
@@ -28,7 +28,7 @@ import PrivateRoute from './AuthProvider/PrivateRoute.jsx';
 import ForgetPassword from './Pages/ForgetPassword.jsx';
 import ResetPassword from './Pages/ResetPassword.jsx';
 import MyProfile from './Pages/MyProfile.jsx';
-import  Blog from './Pages/Blog.jsx'
+import Blog from './Pages/Blog.jsx'
 import Subscribe from './Components/Subscribe.jsx';
 
 import { HelmetProvider } from 'react-helmet-async';
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     path: "/",
     Component: Root,
     errorElement: <ErrorPage></ErrorPage>,
-    hydrateFallbackElement:<span className="loading loading-ring loading-xl"></span>,
+    hydrateFallbackElement: <span className="loading loading-ring loading-xl"></span>,
     children: [
       {
         path: '/',
@@ -51,13 +51,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element:<PrivateRoute>
-           <Blog></Blog>
+        element: <PrivateRoute>
+          <Blog></Blog>
         </PrivateRoute>
       },
       {
         path: '/contact',
-        element:<PrivateRoute>
+        element: <PrivateRoute>
           <Contact></Contact>
         </PrivateRoute>
       },
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       {
         path: '/myprofile',
         element: <PrivateRoute>
-         <MyProfile></MyProfile>
+          <MyProfile></MyProfile>
         </PrivateRoute>
       },
       {
@@ -104,16 +104,16 @@ const router = createBrowserRouter([
         Component: Register
       },
       {
-        path:'/forgetpassword',
-        Component:ForgetPassword
+        path: '/forgetpassword',
+        Component: ForgetPassword
       },
       {
-        path:'/resetpassword',
-        Component:ResetPassword
+        path: '/resetpassword',
+        Component: ResetPassword
       },
       {
-        path:'/subscribe',
-        element:<AuthProvider>
+        path: '/subscribe',
+        element: <AuthProvider>
           <Subscribe></Subscribe>
         </AuthProvider>
       }
@@ -125,11 +125,11 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
- <HelmetProvider>
- <AuthProvider>
+ 
+    <HelmetProvider>
+    <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
- </HelmetProvider>
-  </StrictMode>,
+    </HelmetProvider>
+  
 )

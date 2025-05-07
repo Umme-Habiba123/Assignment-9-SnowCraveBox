@@ -35,11 +35,13 @@ const MyProfile = () => {
 
   return (
     <div className="max-w-5xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg gloria-hallelujah-font">
-       <DynamicTitle  title={'My_Profile'}/>
+
+      <DynamicTitle title={'My_Profile'} />
+
       <h2 className="text-3xl font-bold text-center text-cyan-700 mb-8 flex justify-center ">My Profile <MdVerifiedUser /></h2>
-      
+
       <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
-  
+
         <div className="flex flex-col items-center">
           <img
             src={user?.photoURL || 'https://i.ibb.co/2kRj0kQ/default-user.png'}

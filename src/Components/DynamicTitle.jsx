@@ -1,12 +1,13 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
+
+import { Helmet } from 'react-helmet-async';
 
 const DynamicTitle = ({title}) => {
     return (
         <div>
-           <Helmet>
-            <title>{title} </title>
-           </Helmet>
+          <Helmet>
+          <title>{title} </title>
+          </Helmet>
             
         </div>
     );

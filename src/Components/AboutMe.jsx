@@ -27,12 +27,12 @@ const AboutMe = () => {
                     Thank you for allowing us to be a part of your pet's life. We look forward to bringing smiles and wagging tails with each box!
 
                 </p>
-               <Link to={'/mydetails'}> <button className='btn btn-accent mt-5 hover:bg-white text-black text-2xl satisfy-font'>
+               <Link to={'/mydetails'}> <button className='btn btn-accent mt-5 hover:bg-white text-black text-2xl satisfy-font mb-5'>
                Follow for more !
                 </button> </Link>
 
             </div>
-            <img className='w-60 md:w-80' src={myself} alt="" />
+            <img className='w-60 md:w-70' src={myself} alt="" />
           
         </div>
     );

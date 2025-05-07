@@ -129,13 +129,13 @@ const Login = () => {
             console.log(error.message)
             setSuccess(false)
             if(error.code=== 'auth/wrong-password'){
-                setErrorMessage('Incorrect Password. Please try agai')
+                setErrorMessage('Incorrect Password. Please try again')
             }
             else if(error.code=== 'auth/user-not-found'){
                 setErrorMessage('No user found with this email.')
             }
             else{
-                setErrorMessage('Loging failed. Please try again later .')
+                setErrorMessage('Incorrect Password. Please try again !')
             }
             setSuccess(false)
         })
