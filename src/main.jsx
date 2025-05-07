@@ -18,19 +18,18 @@ import CountUpSection from './Components/CountUpSection.jsx';
 import MyDetails from './Pages/MyDetails.jsx';
 import Slider from './Components/Slider.jsx';
 import HomeLayout from './Layouts.jsx/HomeLayout.jsx';
-
 import SubscribeItem from './Pages/SubscribeItem.jsx';
 import BoxCardDetails from './Pages/BoxCardDetails.jsx';
-
 import ReviewSection from './Components/ReviewSection.jsx';
-import MyProfile from './Components/MyProfile.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
-import Blog from './Pages/Blog.jsx';
 import PrivateRoute from './AuthProvider/PrivateRoute.jsx';
 import ForgetPassword from './Pages/ForgetPassword.jsx';
 import ResetPassword from './Pages/ResetPassword.jsx';
+import MyProfile from './Pages/MyProfile.jsx';
+import  Blog from './Pages/Blog.jsx'
+import Subscribe from './Components/Subscribe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element:<PrivateRoute>
-          <Blog></Blog>
+           <Blog></Blog>
         </PrivateRoute>
       },
       {
@@ -91,7 +90,7 @@ const router = createBrowserRouter([
       {
         path: '/myprofile',
         element: <PrivateRoute>
-          <MyProfile></MyProfile>
+         <MyProfile></MyProfile>
         </PrivateRoute>
       },
       {
@@ -109,6 +108,12 @@ const router = createBrowserRouter([
       {
         path:'/resetpassword',
         Component:ResetPassword
+      },
+      {
+        path:'/subscribe',
+        element:<AuthProvider>
+          <Subscribe></Subscribe>
+        </AuthProvider>
       }
     ]
 

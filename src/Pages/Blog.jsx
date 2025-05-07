@@ -10,7 +10,7 @@ const Blog = () => {
           Your purchase fuels dreams. Each item in our box is proudly sourced from local artisans and small businesses—crafted with love, purpose, and passion.
         </p>
 
-        {/* Grid of Local Makers */}
+  
         <div className="grid gap-10 md:grid-cols-3">
           {/* Card 1 */}
           <div className="bg-white border border-cyan-100 shadow-md p-6 rounded-xl hover:shadow-xl transition duration-300 hover:scale-105">
@@ -34,7 +34,7 @@ const Blog = () => {
           </div>
         </div>
 
-        {/* CTA */}
+ 
         <div className="mt-14">
           <a target='_blank'
             href="https://mentalhealth-uk.org/support-and-services/find-local-support/"

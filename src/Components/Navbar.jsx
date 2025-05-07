@@ -34,11 +34,14 @@ const Navbar = () => {
         <li className='text-cyan-500  hover:scale-105' ><NavLink to={'/myprofile'}>MY PROFILE</NavLink></li>
         <li className='text-cyan-500 hover:scale-105 '><NavLink to={'/contact'}>CONTACT</NavLink></li>
 
-        <li className='text-cyan-500 text-xl  hover:scale-105'><NavLink to={'/blog'}>Blog</NavLink></li>
-
-
-        <li className='text-cyan-500  hover:scale-105 mt-1'><NavLink ><IoPawOutline size={25} /></NavLink></li>
-
+      {
+        user?(
+            <> 
+            <li className='text-cyan-500 text-xl hover:scale-105'><NavLink to={'/blog'}>Blog</NavLink></li>
+            <li className='text-cyan-500 hover:scale-105 mt-1'><NavLink to="#"><IoPawOutline size={25} /></NavLink></li>
+            </>
+        ): null
+      }
     </>
     return (
         <div className='gloria-hallelujah-font w-10/12 mx-auto'>

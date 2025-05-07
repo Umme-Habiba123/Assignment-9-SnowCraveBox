@@ -4,10 +4,6 @@ import { Outlet } from 'react-router';
 import Footer from '../Components/Footer'
 
 
-import HowItWorks from '../Components/HowItWorks';
-import CountUpSection from '../Components/CountUpSection';
-import AboutMe from '../Components/MyProfile';
-
 
 
 

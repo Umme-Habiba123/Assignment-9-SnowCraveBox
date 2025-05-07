@@ -12,7 +12,7 @@ import MySwiper from '../Components/MySwiper';
 const HomeLayout = () => {
     return (
         <div >
-           {/* <Suspense fallback={<span className="loading loading-ring loading-xl"></span>}> */}
+         
            <Slider></Slider>
            <SubscriptionCard></SubscriptionCard>
             <HowItWorks></HowItWorks>
@@ -20,7 +20,7 @@ const HomeLayout = () => {
            <SubscriptionBoxes></SubscriptionBoxes>
            <AboutMe></AboutMe>
            <MySwiper></MySwiper>
-           {/* </Suspense> */}
+          
             
         </div>
     );

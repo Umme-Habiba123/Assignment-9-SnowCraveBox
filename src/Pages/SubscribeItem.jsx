@@ -1,12 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const SubscribeItem = ({ item }) => {
     const { thumbnail, name, description, price, frequency, rating, number_of_reviews,id } = item;
 
+    const navigate=useNavigate()
+
     const handleCardClick = () => {
         console.log('Card clicked');
     };
+
+    const handleSubscribe=()=>{
+       navigate('/subscribe')
+    }
 
     return (
         <div  className=" mb-2 p-5 fontgloria-hallelujah-font">
@@ -42,7 +48,7 @@ const SubscribeItem = ({ item }) => {
                     </div>
 
                     <div className="mt-1 flex justify-between items-center">
-                        <div className="w-1/2 flex justify-between">
+                        <div onClick={handleSubscribe} className="w-1/2 flex justify-between">
                             <button className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black ml-10">
                                 Subscribe
                             </button>
