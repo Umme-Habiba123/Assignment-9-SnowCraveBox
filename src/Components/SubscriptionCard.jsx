@@ -21,7 +21,7 @@ const SubscriptionCard = () => {
            <p className='text-lg font-semibold satisfy-font text-center mt-4'>Each month your dog will receive a themed box full of toys, snacks, and other presents catered to the size and breed of your dog.</p>
            </div>
 
-            <div className='grid grid-cols-3 mx-1 gap-10'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 mx-1 gap-10'>
                 {
                     subscription.map((item => <SubscribeItem key={item.id} item={item}></SubscribeItem> ))
                 }

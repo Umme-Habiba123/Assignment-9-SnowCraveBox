@@ -10,7 +10,7 @@ import { FaRegEye } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { GithubAuthProvider } from 'firebase/auth/web-extension';
-// import Swal from 'sweetalert2';
+
 
 const Login = () => {
 
@@ -29,7 +29,6 @@ const Login = () => {
         }
 
         setErrorMessage(' ')
-
         sendPasswordResetEmail(auth, email)
             .then(result => {
                 console.log(result)
@@ -104,7 +103,6 @@ const Login = () => {
         else {
             setErrorMessage('')
         }
-
         if (!checkbox) {
             setErrorMessage('Please Accept Our Terms and Conditions')
             return
@@ -122,6 +120,7 @@ const Login = () => {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Continue'
             }).then(() => {
+                setLoading(false)
                 navigate(location?.state || '/');
             });
 

@@ -57,7 +57,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <img className='lg:w-50 w-20 lg:ml-30' src={navbarPhoto} alt="" />
+                    <img className='lg:w-50 md:hidden lg:ml-30 lg:block hidden ' src={navbarPhoto} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -76,8 +76,9 @@ const Navbar = () => {
                     </div>
 
                     {
-                        user ? <button onClick={handleSignOut} className="btn px-10 text-lg bg-cyan-200 hover:bg-white border-cyan-200 hover:scale-110">SIGN OUT</button> :
-                            <Link to={'/login'} className="btn px-10 text-lg bg-cyan-200 hover:bg-white border-cyan-200 hover:scale-110">SIGN IN</Link>
+                        user ? <button onClick={handleSignOut} className="btn lg:px-10 lg:text-lg bg-cyan-200 hover:bg-white border-cyan-200 hover:scale-110 ">SIGN OUT</button>
+                         :
+                            <Link to={'/login'} className="btn lg:px-10 lg:text-lg bg-cyan-200 hover:bg-white border-cyan-200 hover:scale-110">SIGN IN</Link>
                     }
 
                 </div>

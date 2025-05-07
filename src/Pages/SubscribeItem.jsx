@@ -48,8 +48,8 @@ const SubscribeItem = ({ item }) => {
                     </div>
 
                     <div className="mt-1 flex justify-between items-center">
-                        <div onClick={handleSubscribe} className="w-1/2 flex justify-between">
-                            <button className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black ml-10">
+                        <div className="w-1/2 flex justify-between">
+                            <button onClick={handleSubscribe} className="btn btn-primary text-xs bg-cyan-500 border-cyan-500 text-white hover:bg-white hover:text-black ml-10">
                                 Subscribe
                             </button>
                           <Link onClick={handleCardClick} to={`/boxcarddetails/${id}`}>

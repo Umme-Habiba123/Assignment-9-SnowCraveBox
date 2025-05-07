@@ -1,10 +1,17 @@
 import React from 'react';
-
-
-import { Navigate } from 'react-router';
+import DynamicTitle from '../Components/DynamicTitle';
+import HomeLayout from '../Layouts.jsx/HomeLayout';
 
 const HomePage = () => {
-    return <Navigate to="/boxcarddetails/1" />
+    const pageTitle = 'Home - SnowCraveBox'
+    
+    return (
+        <div>
+            <DynamicTitle title={pageTitle}> 
+              <HomeLayout></HomeLayout>  
+            </DynamicTitle>
+        </div>
+    )
 
 }
 
