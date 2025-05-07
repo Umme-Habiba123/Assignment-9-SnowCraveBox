@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { user } = use(AuthContext)
+    console.log(user)
 
 
     const handleSignOut = () => {
@@ -68,7 +69,7 @@ const Navbar = () => {
                 <div className="navbar-end relative   group cursor-pointer">
                     <img 
                     className='  lg:mr-4  w-5 mr-2 lg:w-12 cursor-pointer' 
-                    src={`${user ? user.photoURL : profile}`} 
+                    src={`${user?.photoURL || profile}`} 
                     alt="user photo" />
                     <div>
                         <p className='mr-2 text-xs font-semibold text-gray-500 absolute bottom-full left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 tooltip-text'>Name : {user ? user.displayName : ' guest '}</p>

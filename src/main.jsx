@@ -31,6 +31,8 @@ import MyProfile from './Pages/MyProfile.jsx';
 import  Blog from './Pages/Blog.jsx'
 import Subscribe from './Components/Subscribe.jsx';
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -124,8 +126,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
+ <HelmetProvider>
+ <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+ </HelmetProvider>
   </StrictMode>,
 )

@@ -1,8 +1,10 @@
 import React from 'react';
+import DynamicTitle from '../Components/DynamicTitle';
 
 const Blog = () => {
     return (
         <div className='w-10/12 mx-auto'>
+           <DynamicTitle  title={'My_Blog'}/>
             <section className="bg-gradient-to-br from-white via-cyan-50 to-white py-20 px-4 md:px-10 text-gray-800">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-cyan-700 mb-4 drop-shadow-sm ">💙 Support Local Heroes</h2>

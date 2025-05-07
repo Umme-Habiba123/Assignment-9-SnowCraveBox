@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import DynamicTitle from '../Components/DynamicTitle';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -30,7 +31,10 @@ const Contact = () => {
     };
 
     return (
+      
+        
         <div className="max-w-xl mx-auto mt-10 p-6 shadow-lg rounded-lg bg-white">
+              <DynamicTitle  title={'Contact'}/>
             <h2 className="text-2xl font-bold mb-4 text-center text-cyan-600">Contact Us for Subscription</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input

@@ -1,7 +1,7 @@
 import React from 'react';
 import DynamicTitle from '../Components/DynamicTitle';
 
-import MyProfile from '../Pages/MyProfile';
+
 
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
     return (
         <div>
             <DynamicTitle  title={pageTitle}/>
-          <MyProfile></MyProfile>
+        
             
         </div>
     )

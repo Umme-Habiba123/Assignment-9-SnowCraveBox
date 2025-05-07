@@ -8,10 +8,12 @@ import SubscriptionBoxes from '../Components/SubscriptionBoxes ';
 import AboutMe from '../Components/AboutMe';
 import Swiper from 'swiper';
 import MySwiper from '../Components/MySwiper';
+import DynamicTitle from '../Components/DynamicTitle';
 
 const HomeLayout = () => {
     return (
         <div >
+             <DynamicTitle  title={'Home_page'}/>
          
            <Slider></Slider>
            <SubscriptionCard></SubscriptionCard>

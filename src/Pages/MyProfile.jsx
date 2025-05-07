@@ -3,6 +3,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../firebase.config';
 import { MdVerifiedUser } from "react-icons/md";
+import DynamicTitle from '../Components/DynamicTitle';
 
 const MyProfile = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -24,16 +25,17 @@ const MyProfile = () => {
       });
       setUser({ ...auth.currentUser });
 
-      setMessage('Profile updated successfully!✅');
+      setMessage('Profile updated successfully!');
       setEditMode(false);
     } catch (err) {
       console.error(err);
-      setError('❌ Failed to update profile.');
+      setError(' Failed to update profile.');
     }
   };
 
   return (
     <div className="max-w-5xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg gloria-hallelujah-font">
+       <DynamicTitle  title={'My_Profile'}/>
       <h2 className="text-3xl font-bold text-center text-cyan-700 mb-8 flex justify-center ">My Profile <MdVerifiedUser /></h2>
       
       <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
