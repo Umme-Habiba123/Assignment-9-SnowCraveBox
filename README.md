@@ -12,7 +12,7 @@ It features a clean UI, easy navigation, and a secure shopping cart experience.
 ---
 
 ## 🖼 Screenshot
-![SnowCraveBox Screenshot](https://i.ibb.co/9JxsBWr/pic-2.jpg)
+![SnowCraveBox Screenshot](https://i.ibb.co.com/9JxsBWr/pic-2.jpg)
 
 ---
 
