@@ -1,55 +1,42 @@
-SnowCraveBox
+# 🐾 SnowCraveBox
 
+**Live Demo:** https://keen-zuccutto-a95ba4.netlify.app/  
+**Repository (Client):** https://github.com/Umme-Habiba123/Assignment-9-SnowCraveBox
 
-purpose: SnowCraveBox is a subscription box service designed for pet lovers, providing monthly curated boxes filled with high-quality products for cats and dogs. Whether you're a cat parent or a dog lover, SnowCraveBox delivers a range of treats, toys, and accessories tailored to your pet’s needs.
+---
 
+## 🔍 Project Overview
+SnowCraveBox is a modern pet shop web app designed for pet lovers to buy food, toys, and accessories online.  
+It features a clean UI, easy navigation, and a secure shopping cart experience.
 
+---
 
+## 🖼 Screenshot
+![SnowCraveBox Screenshot](https://i.ibb.co/9JxsBWr/pic-2.jpg)
 
+---
 
-Live URL: https://keen-zuccutto-a95ba4.netlify.app/blog
+## 🧰 Technologies Used
+- React  
+- Tailwind CSS  
+- React Router  
+- Node.js  
+- Express.js  
+- MongoDB  
+- Firebase  
 
+---
 
+## ✨ Core Features
+- 🐶 User authentication (login/register)  
+- 🛒 Product listing, search & filter  
+- 💳 Add to cart and checkout  
+- 🧾 Product management system (CRUD)  
+- 📱 Fully responsive layout  
+- ⚡ Optimized for performance  
 
+---
 
-Key Features :
-Monthly Subscription Boxes: Get monthly boxes with a variety of products tailored for cats or dogs.
-
-Curated Products: Every box contains treats, toys, grooming products, and accessories that are handpicked based on your pet’s preferences.
-
-Easy Subscription Management: Subscribe or cancel your subscription at any time with ease.
-
-Pet Customization: Choose between different boxes tailored for cats or dogs, and customize based on your pet's size and preferences.
-
-Responsive Design: A seamless experience on desktop, tablet, and mobile devices.
-
-Payment Integration: Secure and easy payment gateway for subscriptions.
-
-
-
-
-npm Packages Used :
-react: Used for building the user interface.
-
-react-helmet: To dynamically manage the page title and other <head> elements.
-
-react-router-dom: For navigation between different pages.
-
-axios: For making API requests to manage subscriptions and products.
-
-redux: For managing state across the application.
-
-react-redux: To integrate Redux with React for state management.
-
-Installation Instructions :
-git clone https://github.com/your-username/snowcravebox.git
-cd snowcravebox
-npm install
-npm start
-
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-
-This version emphasizes that SnowCraveBox is a subscription service for pet products tailored to cats and dogs. You can use this as a more accurate description for your project!
-
+## ⚙️ Dependencies
+```bash
+npm install react react-dom react-router-dom axios tailwindcss react-hook-form classnames
